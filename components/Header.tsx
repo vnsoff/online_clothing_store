@@ -1,39 +1,33 @@
-import Image from 'next/image'
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header>
-    <div className="logo flex items-center justify-center">
-      <p className="font-semibold m-4">Elegance Emporium</p>
-    </div>
-    <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/women">Women</Link>
-          </li>
-          <li>
-            <Link to="/men">Men</Link>
-          </li>
-          <li>
-            <Link to="/trends">Trends</Link>
-          </li>
-          <li>
-            <Link to="/new">New</Link>
-          </li>
-          <li>
-            <Link to="/plus">PlusSize</Link>
-          </li>
-          <li>
-            <Link to="/brands">Brands</Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    )
-}
+    <header className="bg-gray-900 text-white">
+      <div className="container mx-auto py-4 flex justify-between items-center">
+        {/* Logo */}
+        <div className="text-2xl font-bold">
+          <Link to="/">Your Logo</Link>
+        </div>
 
-export default Header 
+        {/* Navigation */}
+        <nav>
+          <ul className="flex space-x-4">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/women">Women</Link>
+            </li>
+            <li>
+              <Link to="/men">Men</Link>
+            </li>
+            {/* Add more navigation links */}
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
