@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ShoppingCart, User, Heart } from 'feather-icons'; // Import the Feather Icons
-import 'tailwindcss/tailwind.css'; // Import Tailwind CSS
+import { ShoppingCart, User, Heart } from 'feather-icons';
+import 'tailwindcss/tailwind.css';
 
 function Header() {
   return (
@@ -33,7 +33,7 @@ function Header() {
                 alt="Search"
                 width={24}
                 height={24}
-                className="w-6 h-6 ml-auto" // Use ml-auto to push the icon to the right
+                className="w-6 h-6 ml-auto"
               />
             </button>
             </div>
