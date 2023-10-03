@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ShoppingCart, User, Heart } from 'feather-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart,faHeart,faUser} from '@fortawesome/free-solid-svg-icons';
+import { ShoppingCartIcon, HeartIcon, UserIcon } from './IconComponents'; // Import your icon components
 import 'tailwindcss/tailwind.css';
 
 function Header() {
@@ -11,7 +13,10 @@ function Header() {
           <Link href="/">Emporium</Link>
         </div>
         <nav className="flex items-center justify-center">
-          <div className="flex space-x-20 items-center">
+          <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 space-x-0 sm:space-x-4 items-center">
+            {/* Your Links */}
+            <div className="flex space-x-2 sm:space-x-12 items-center">
+            {/* Your Links */}
             <Link href="/">Home</Link>
             <Link href="/trends">Trends</Link>
             <Link href="/new">New</Link>
@@ -19,6 +24,7 @@ function Header() {
             <Link href="/men">Men</Link>
             <Link href="/plus_size">Plus Size</Link>
             <Link href="/brands">Brands</Link>
+            </div>
             <div className="relative text-gray-600">
               <input
                 type="search"
@@ -26,51 +32,36 @@ function Header() {
                 placeholder="Search products"
                 className="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none"
               />
-            <button type="submit" className="absolute right-0 top-0 mt-3 mr-4 flex items-center">
-              {/* Custom Search Icon */}
-              <Image
-                src="/images/search-icon.png"
-                alt="Search"
-                width={24}
-                height={24}
-                className="w-6 h-6 ml-auto"
-              />
-            </button>
+              <button
+                type="submit"
+                className="absolute right-0 top-0 mt-3 mr-4 flex items-center"
+              >
+                {/* Custom Search Icon */}
+                <Image
+                  src="/images/search-icon.png"
+                  alt="Search"
+                  width={24}
+                  height={24}
+                  className="w-6 h-6 ml-auto"
+                />
+              </button>
             </div>
             {/* Cart Button */}
             <Link href="/cart" legacyBehavior>
-              <a className="text-gray-600">
-                <Image
-                  src="/images/cart-icon.png"
-                  alt="Cart"
-                  width={24}
-                  height={24}
-                  className="w-6 h-6"
-                />
+              <a>
+                <FontAwesomeIcon icon={faShoppingCart} />
               </a>
             </Link>
             {/* Login/Profile Button */}
             <Link href="/profile" legacyBehavior>
-              <a className="text-gray-600">
-                <Image
-                  src="/images/profile-icon.png"
-                  alt="Profile"
-                  width={24}
-                  height={24}
-                  className="w-6 h-6"
-                />
+              <a>
+                <FontAwesomeIcon icon={faUser} />
               </a>
             </Link>
             {/* Favorites Button */}
             <Link href="/favorites" legacyBehavior>
-              <a className="text-gray-600">
-                <Image
-                  src="/images/favorites-icon.png"
-                  alt="Favorites"
-                  width={24}
-                  height={24}
-                  className="w-6 h-6"
-                />
+              <a>
+                <FontAwesomeIcon icon={faHeart} />
               </a>
             </Link>
           </div>
