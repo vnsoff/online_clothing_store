@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart,faHeart,faUser} from '@fortawesome/free-solid-svg-icons';
-import { ShoppingCartIcon, HeartIcon, UserIcon } from './IconComponents'; // Import your icon components
 import 'tailwindcss/tailwind.css';
 
 function Header() {
@@ -49,19 +47,19 @@ function Header() {
             {/* Cart Button */}
             <Link href="/cart" legacyBehavior>
               <a>
-                <FontAwesomeIcon icon={faShoppingCart} />
+              <FontAwesomeIcon icon="shopping-cart" />
               </a>
             </Link>
             {/* Login/Profile Button */}
             <Link href="/profile" legacyBehavior>
               <a>
-                <FontAwesomeIcon icon={faUser} />
+              <FontAwesomeIcon icon="user" />
               </a>
             </Link>
             {/* Favorites Button */}
             <Link href="/favorites" legacyBehavior>
               <a>
-                <FontAwesomeIcon icon={faHeart} />
+              <FontAwesomeIcon icon="heart" />
               </a>
             </Link>
           </div>
