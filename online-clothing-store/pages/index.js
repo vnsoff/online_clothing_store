@@ -2,13 +2,17 @@
 
 import Header from "../components/Header";
 import Banner from "../components/Banner";
-import "../config/fontAwesome"; // Import the Font Awesome configuration
+import Banner2 from "../components/Banner2";
+import Footer from "../components/Footer";
+import "../config/fontAwesome";
 
 function Home() {
   return (
     <div>
       <Header />
       <Banner />
+      <Banner2 />
+      <Footer />
     </div>
   );
 }
