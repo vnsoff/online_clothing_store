@@ -5,6 +5,7 @@ import Banner from "../components/Banner";
 import Banner2 from "../components/Banner2";
 import Banner3 from "../components/Banner3";
 import Banner4 from "../components/Banner4";
+import Banner5 from "../components/Banner5";
 import Footer from "../components/Footer";
 
 function Home() {
@@ -23,6 +24,12 @@ function Home() {
           <Banner3/>
           <Banner4/>
         </div>
+      </div>
+      <div className="flex space-x-10 m-10">
+        <Banner5/>
+        <Banner5/>
+        <Banner5/>
+        <Banner5/>
       </div>
       <Footer />
     </div>

@@ -8,7 +8,7 @@ function Header() {
     <header className="bg-gray-900 text-white">
       <div className="container mx-auto py-4 flex flex-col items-center">
         <div className="text-2xl font-bold mb-4">
-          <Link href="/">Emporium</Link>
+          <Link href="/">Store Name</Link>
         </div>
         <nav className="flex items-center justify-center">
           <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 space-x-0 sm:space-x-4 items-center">
