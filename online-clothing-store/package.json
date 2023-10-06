@@ -15,7 +15,8 @@
     "feather-icons": "^4.29.1",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "sharp": "^0.32.6"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
