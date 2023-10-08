@@ -2,9 +2,27 @@ import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
 import { ShoppingCartIcon, HeartIcon, UserIcon } from './IconComponents';
+import MobileMenu from './MobileMenu';
+
 import 'tailwindcss/tailwind.css';
 
 function Header() {
+  const [showMobileMenu, setShowMobileMenu] = React.useState(false);
+  const toggleMobileMenu = () => {
+    setShowMobileMenu(!showMobileMenu);
+  };
+  const navLinks = [
+    { text: 'Home', href: '/' },
+    { text: 'Trends', href: '/trends' },
+    { text: 'New', href: '/new' },
+    { text: 'Women', href: '/women' },
+    { text: 'Men', href: '/men' },
+    { text: 'Plus Size', href: '/plus_size' },
+    { text: 'Brands', href: '/brands' },
+  ];
+  const closeMobileMenu = () => {
+    setShowMobileMenu(false);
+  };
   return (
     <header className="bg-gray-900 text-white">
       <div className="container mx-auto py-4 flex flex-col items-center">
@@ -13,16 +31,12 @@ function Header() {
         </div>
         <nav className="flex items-center justify-center">
           <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 space-x-0 sm:space-x-4 items-center">
-            {/* Your Links */}
-            <div className="flex space-x-2 sm:space-x-12 items-center">
-            {/* Your Links */}
-            <Link href="/">Home</Link>
-            <Link href="/trends">Trends</Link>
-            <Link href="/new">New</Link>
-            <Link href="/women">Women</Link>
-            <Link href="/men">Men</Link>
-            <Link href="/plus_size">Plus Size</Link>
-            <Link href="/brands">Brands</Link>
+            <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 space-x-0 sm:space-x-14 items-center mx-16">
+            {navLinks.map((link) => (
+              <Link key={link.text} href={link.href}>
+                <div onClick={closeMobileMenu}>{link.text}</div>
+              </Link>
+            ))}
             </div>
             <div className="relative text-gray-600">
               <input
@@ -46,26 +60,33 @@ function Header() {
               </button>
             </div>
             {/* Cart Button */}
-            <Link href="/cart" legacyBehavior>
-              <a>
-              <ShoppingCartIcon />
-              </a>
+            <Link href="/cart">
+              <div>
+                <ShoppingCartIcon />
+              </div>
             </Link>
             {/* Login/Profile Button */}
-            <Link href="/profile" legacyBehavior>
-              <a>
-              <UserIcon />
-              </a>
+            <Link href="/profile">
+              <div>
+                <UserIcon />
+              </div>
             </Link>
             {/* Favorites Button */}
-            <Link href="/favorites" legacyBehavior>
-              <a>
-              <HeartIcon />
-              </a>
+            <Link href="/favorites">
+              <div>
+                <HeartIcon />
+              </div>
             </Link>
           </div>
+          <button
+            className="text-white sm:hidden"
+            onClick={toggleMobileMenu}
+          >
+            ☰
+          </button>
         </nav>
       </div>
+      {showMobileMenu && <MobileMenu closeMobileMenu={closeMobileMenu} />}
     </header>
   );
 }
