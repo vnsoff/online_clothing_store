@@ -1,15 +1,15 @@
 import React from 'react';
 
-function Banner3() {
+function Banner6() {
   return (
     <div className="bg-cover bg-center h-full w-full">
       <img
-        src="/images/wallpaper5.svg"
-        alt="Banner3"
+        src="/images/wallpaper6.svg"
+        alt="Banner6"
         className="w-full h-full object-cover"
       />
     </div>
   );
 }
 
-export default Banner3;
+export default Banner6;

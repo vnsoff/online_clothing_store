@@ -1,18 +1,21 @@
 // pages/index.js
 
 import Header from "../components/Header";
-import Banner from "../components/Banner";
+import Banner1 from "../components/Banner1";
 import Banner2 from "../components/Banner2";
 import Banner3 from "../components/Banner3";
 import Banner4 from "../components/Banner4";
 import Banner5 from "../components/Banner5";
+import Banner6 from "../components/Banner6";
 import Footer from "../components/Footer";
 
 function Home() {
   return (
     <div>
       <Header />
-      <Banner />
+      <div>
+      <Banner1 />
+      </div>
       {/* Main Banner on the center */} 
       <div className="flex mx-10 my-10">
         {/* Secondary Banner on the left */}
@@ -24,6 +27,9 @@ function Home() {
           <Banner3/>
           <Banner4/>
         </div>
+      </div>
+      <div className="flex space-x-10 m-10">
+        <Banner6/>
       </div>
       <div className="flex space-x-10 m-10">
         <Banner5/>

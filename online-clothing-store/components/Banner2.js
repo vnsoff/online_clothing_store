@@ -4,7 +4,7 @@ function Banner2() {
   return (
     <div className="bg-cover bg-center h-full w-11/12">
       <img
-        src="/images/wallpaper3.png"
+        src="/images/wallpaper3.svg"
         alt="Banner2"
         className="w-full h-full object-cover"
       />
