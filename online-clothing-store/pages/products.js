@@ -1,7 +1,7 @@
 // pages/products.js
 
 import Header from '../components/Header';
-import Product from '../components/Product';
+import Product from '../components/ProductCard';
 
 // Sample product data (replace with actual data)
 const products = [

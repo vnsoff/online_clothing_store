@@ -1,7 +1,7 @@
 // pages/[category]/index.js
 
 import { useRouter } from 'next/router';
-import Product from '../../components/Product';
+import Product from '../../components/ProductCard';
 
 const CategoryPage = () => {
   const router = useRouter();
