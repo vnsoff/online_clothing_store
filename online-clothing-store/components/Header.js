@@ -37,7 +37,7 @@ function Header() {
             <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 space-x-0 sm:space-x-14 items-center mx-16">
               {navLinks.map((link) => (
                 <Link key={link.text} href={link.href}>
-                  <div onClick={closeMobileMenu} className={link.text === 'Women' ? 'mx-8' : ''}>
+                  <div onClick={closeMobileMenu}>
                     {link.text}
                   </div>
                 </Link>

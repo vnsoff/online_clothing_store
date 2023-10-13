@@ -1,8 +1,8 @@
-//components/ProductListing.js
+//ProductListing.js
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import ProductCard from '../components/ProductCard'; 
+import ProductCard from '../components/ProductCard';
 
 function ProductListing({ selectedCategory }) {
   const [products, setProducts] = useState([]);
@@ -10,19 +10,35 @@ function ProductListing({ selectedCategory }) {
   useEffect(() => {
     // For now, placeholder products for testing:
     setProducts([
-      { id: 1, name: 'Product 1', price: 29.99, image: '/images/product_image.png' },
-      { id: 2, name: 'Product 2', price: 39.99, image: '/images/product_image.png' },
-      { id: 3, name: 'Product 3', price: 39.99, image: '/images/product_image.png' },
-      { id: 4, name: 'Product 4', price: 39.99, image: '/images/product_image.png' },
-      { id: 5, name: 'Product 5', price: 39.99, image: '/images/product_image.png' },
+      { id: 1, name: 'Product 1', price: 29.99, image: '/images/product_image.svg' },
+      { id: 2, name: 'Product 2', price: 39.99, image: '/images/product_image.svg' },
+      { id: 3, name: 'Product 3', price: 39.99, image: '/images/product_image.svg' },
+      { id: 4, name: 'Product 4', price: 39.99, image: '/images/product_image.svg' },
+      { id: 5, name: 'Product 5', price: 39.99, image: '/images/product_image.svg' },
+      { id: 5, name: 'Product 5', price: 39.99, image: '/images/product_image.svg' },
+      { id: 5, name: 'Product 5', price: 39.99, image: '/images/product_image.svg' },
+      { id: 5, name: 'Product 5', price: 39.99, image: '/images/product_image.svg' },
+      { id: 5, name: 'Product 5', price: 39.99, image: '/images/product_image.svg' },
     ]);
   }, [selectedCategory]);
-  
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
+    <div className="flex mt-4">
+      {/* Left side component (e.g., filters or categories) with margin */}
+      <div className="w-1/3 p-4">
+        <div className="bg-gray-100 p-4 rounded shadow">
+          Filters
+        </div>
+      </div>
+
+      {/* Right side grid of products with margin */}
+      <div className="w-2/3 p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
