@@ -8,7 +8,7 @@ function Breadcrumbs() {
   const pathnames = router.pathname.split('/').filter((x) => x);
 
   return (
-    <nav className="p-4">
+    <nav className="px-4 mx-16 mt-10">
       <ul className="flex space-x-2">
         <li>
           <Link href="/">Home</Link>

@@ -4,7 +4,7 @@ import React from 'react';
 
 function ProductCard({ product }) {
   return (
-    <div className="border rounded-lg overflow-hidden shadow-lg">
+    <div className="border rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
       <img
         src={product.image}
         alt={product.name}

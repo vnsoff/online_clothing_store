@@ -26,15 +26,16 @@ function ProductListing({ selectedCategory }) {
   return (
     <div className="flex mt-4">
       {/* Left side component (e.g., filters or categories) with margin */}
-      <div className="w-1/3 p-4">
+      <div className="w-1/5 p-4 ml-16">
         <div className="bg-gray-100 p-4 rounded shadow">
           Filters
         </div>
       </div>
 
       {/* Right side grid of products with margin */}
-      <div className="w-2/3 p-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="w-4/5 p-4 mr-16">
+      <div className="text-left text-4xl font-bold py-4 mb-8">Women's Clothing</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
