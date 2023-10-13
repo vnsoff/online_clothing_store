@@ -1,27 +1,21 @@
-import React from 'react';
+//components/ProductListing.js
+
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import ProductCard from '../components/ProductCard'; 
 
 function ProductListing({ selectedCategory }) {
-  const [products, setProducts] = React.useState([]);
+  const [products, setProducts] = useState([]);
 
-  React.useEffect(() => {
-    // Define an async function to fetch products.
-    const fetchProducts = async () => {
-      try {
-        // Make an HTTP request to fetch products based on the selected category.
-        const response = await axios.get(`/api/products?category=${selectedCategory}`);
-        // Assuming the response contains an array of products.
-        const products = response.data;
-  
-        // Update the products state with the fetched data.
-        setProducts(products);
-      } catch (error) {
-        console.error('Error fetching products:', error);
-      }
-    };
-  
-    // Call the fetchProducts function.
-    fetchProducts();
+  useEffect(() => {
+    // For now, placeholder products for testing:
+    setProducts([
+      { id: 1, name: 'Product 1', price: 29.99, image: '/images/product_image.png' },
+      { id: 2, name: 'Product 2', price: 39.99, image: '/images/product_image.png' },
+      { id: 3, name: 'Product 3', price: 39.99, image: '/images/product_image.png' },
+      { id: 4, name: 'Product 4', price: 39.99, image: '/images/product_image.png' },
+      { id: 5, name: 'Product 5', price: 39.99, image: '/images/product_image.png' },
+    ]);
   }, [selectedCategory]);
   
   return (
