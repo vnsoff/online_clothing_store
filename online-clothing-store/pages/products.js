@@ -4,19 +4,18 @@ import React from 'react';
 import Header from '../components/Header';
 import ProductListing from '../components/ProductListing';
 import CategorySelection from '../components/CategorySelection';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 function Products() {
   const router = useRouter();
-  const { category } = router.query;
-
   return (
     <div>
       <Header />
       <CategorySelection
         categories={['Women', 'Men', 'Trends', 'New', 'Plus Size', 'Brands']}
-        onSelectCategory={(selectedCategory) => router.push(`/products?category=${selectedCategory}`)}
+        onSelectCategory={(selectedCategory) => router.push(`/products/${selectedCategory}`)}
       />
-      <ProductListing selectedCategory={category} />
+      <ProductListing selectedCategory={currentCategory} />
     </div>
   );
 }

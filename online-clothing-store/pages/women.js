@@ -1,13 +1,17 @@
+// pages/women.js
+
 import React from 'react';
-import Header from '../components/Header'; // Import the Header component
+import Header from '../components/Header';
 import ProductListing from '../components/ProductListing';
-import 'tailwindcss/tailwind.css';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 function WomenPage() {
   return (
     <div>
-      <Header /> {/* Use the Header component */}
-      <ProductListing selectedCategory="Women" />
+      <Header />
+      <Breadcrumbs />
+      <div className="text-center text-4xl font-bold py-4">Women's Products</div>
+      <ProductListing selectedCategory="women" />
     </div>
   );
 }
