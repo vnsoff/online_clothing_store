@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import CategorySelection from '../components/CategorySelection';
 import ProductListing from '../components/ProductListing';
 
-function WomenComponent() {
+function Women() {
   const [selectedCategory, setSelectedCategory] = useState('Women');
 
   return (
@@ -15,4 +15,4 @@ function WomenComponent() {
   );
 }
 
-export default WomenComponent;
+export default Women;

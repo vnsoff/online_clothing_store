@@ -1,14 +1,12 @@
-//pages/women.js
-
 import React from 'react';
-import CategorySelection from '../components/CategorySelection';
+import Header from '../components/Header'; // Import the Header component
 import ProductListing from '../components/ProductListing';
 import 'tailwindcss/tailwind.css';
 
 function WomenPage() {
   return (
     <div>
-      <CategorySelection selectedCategory="Women" />
+      <Header /> {/* Use the Header component */}
       <ProductListing selectedCategory="Women" />
     </div>
   );

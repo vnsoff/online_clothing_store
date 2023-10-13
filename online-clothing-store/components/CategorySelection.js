@@ -1,8 +1,8 @@
+//components/CategorySelection.js
+
 import React from 'react';
 
-function CategorySelection({ onSelectCategory }) {
-  const categories = ['Trends', 'Women', 'Men', 'Plus Size', 'Brands']; // Add your categories
-
+function CategorySelection({ categories, onSelectCategory }) {
   return (
     <div>
       <h3>Select a category:</h3>
