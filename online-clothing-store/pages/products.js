@@ -4,7 +4,6 @@ import React from 'react';
 import Header from '../components/Header';
 import ProductListing from '../components/ProductListing';
 import CategorySelection from '../components/CategorySelection';
-import Breadcrumbs from '../components/Breadcrumbs';
 
 function Products() {
   const router = useRouter();
