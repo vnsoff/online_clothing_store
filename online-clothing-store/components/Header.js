@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
-import { ShoppingCartIcon, HeartIcon, UserIcon } from './IconComponents';
+import { ShoppingCartIcon, HeartIcon, UserIcon,SearchIcon } from './IconComponents';
 import MobileMenu from './MobileMenu';
 import 'tailwindcss/tailwind.css';
 
@@ -55,13 +55,7 @@ function Header() {
                 className="absolute right-0 top-0 mt-3 mr-4 flex items-center"
               >
                 {/* Custom Search Icon */}
-                <Image
-                  src="/images/search-icon.png"
-                  alt="Search"
-                  width={24}
-                  height={24}
-                  className="w-6 h-6 ml-auto"
-                />
+                <SearchIcon className="w-6 h-6 ml-auto" />
               </button>
             </div>
             {/* Cart Button */}
