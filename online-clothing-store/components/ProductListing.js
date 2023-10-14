@@ -50,11 +50,11 @@ function ProductListing({ selectedCategory }) {
       ];
     } else if (selectedCategory === 'new') {
       newProducts = [
-        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_3.svg' },
-        { id: 23, name: "Women's Dress 2", price: 59.99, image: '/images/product_image_3.svg' },
-        { id: 1343, name: "Women's Shirt 1", price: 29.99, image: '/images/product_image_3.svg' },
-        { id: 144, name: "Women's Shirt 2", price: 3.99, image: '/images/product_image_3.svg' },
-        { id: 14344, name: "Women's Shirt 2", price: 349.99, image: '/images/product_image_3.svg' },
+        { id: 143, name: "Dress 1", price: 49.99, image: '/images/product_image_3.svg' },
+        { id: 23, name: "Dress 2", price: 59.99, image: '/images/product_image_3.svg' },
+        { id: 1343, name: "Shirt 1", price: 29.99, image: '/images/product_image_3.svg' },
+        { id: 144, name: " Shirt 2", price: 3.99, image: '/images/product_image_3.svg' },
+        { id: 14344, name: "Shirt 2", price: 349.99, image: '/images/product_image_3.svg' },
         { id: 1444, name: "Women's Shirt 2", price: 394.99, image: '/images/product_image_3.svg' },
         { id: 1544, name: "Women's Shirt 2", price: 393.99, image: '/images/product_image_3.svg' },
         { id: 1544, name: "Women's Shirt 2", price: 393.99, image: '/images/product_image_3.svg' },
@@ -62,8 +62,20 @@ function ProductListing({ selectedCategory }) {
         { id: 1544, name: "Women's Shirt 2", price: 393.99, image: '/images/product_image_3.svg' },
         { id: 1544, name: "Women's Shirt 2", price: 393.99, image: '/images/product_image_3.svg' },
       ];
-    } else {
-
+    } else if (selectedCategory === 'plus_size') {
+      newProducts = [
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_4.svg' },
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_4.svg' },
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_4.svg' },
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_4.svg' },
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_4.svg' },
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_4.svg' },
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_4.svg' },
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_4.svg' },
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_4.svg' },
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_4.svg' },
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_4.svg' },
+      ];
     }
     setProducts(newProducts);
   }, [selectedCategory]);
@@ -86,6 +98,8 @@ function ProductListing({ selectedCategory }) {
             ? "Women's Clothing"
             : selectedCategory === 'new'
             ? "New Products"
+            : selectedCategory === 'plus_size'
+            ? "Plus Size Clothing"
             : "Other Categories"
             }
         </div>
