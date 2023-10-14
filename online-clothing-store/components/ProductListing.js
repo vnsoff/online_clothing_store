@@ -77,6 +77,20 @@ function ProductListing({ selectedCategory }) {
         { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_4.svg' },
       ];
     }
+    else if (selectedCategory === 'trends') {
+      newProducts = [
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_5.svg' },
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_5.svg' },
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_5.svg' },
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_5.svg' },
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_5.svg' },
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_5.svg' },
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_5.svg' },
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_5.svg' },
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_5.svg' },
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_5.svg' },
+      ];
+    }
     setProducts(newProducts);
   }, [selectedCategory]);
 
@@ -100,6 +114,8 @@ function ProductListing({ selectedCategory }) {
             ? "New Products"
             : selectedCategory === 'plus_size'
             ? "Plus Size Clothing"
+            : selectedCategory === 'trends'
+            ? "Trending"
             : "Other Categories"
             }
         </div>
