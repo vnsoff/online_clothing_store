@@ -1,3 +1,5 @@
+//components/ProductListing.js
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductCard from '../components/ProductCard';
@@ -91,6 +93,25 @@ function ProductListing({ selectedCategory }) {
         { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_5.svg' },
       ];
     }
+    else if (selectedCategory === 'brands') {
+      //placeholders
+      const brandsData = [
+        {
+          name: 'Brand 1',
+          products: [
+            { id: 1, name: 'Product 1', price: 34.99, image: '/images/product_image_1.svg' },
+            { id: 2, name: 'Product 2', price: 44.99, image: '/images/product_image_2.svg' },
+          ],
+        },
+        {
+          name: 'Brand 2',
+          products: [
+            { id: 101, name: 'Product 101', price: 59.99, image: '/images/product_image_1.svg' },
+            { id: 102, name: 'Product 102', price: 69.99, image: '/images/product_image_1.svg' },
+          ],
+        },
+      ];
+    }
     setProducts(newProducts);
   }, [selectedCategory]);
 
@@ -116,6 +137,8 @@ function ProductListing({ selectedCategory }) {
             ? "Plus Size Clothing"
             : selectedCategory === 'trends'
             ? "Trending"
+            : selectedCategory === 'brands'
+            ? "Brands"
             : "Other Categories"
             }
         </div>
