@@ -48,7 +48,22 @@ function ProductListing({ selectedCategory }) {
         { id: 1544, name: "Women's Shirt 2", price: 393.99, image: '/images/product_image_2.svg' },
         { id: 1544, name: "Women's Shirt 2", price: 393.99, image: '/images/product_image_2.svg' },
       ];
+    } else if (selectedCategory === 'new') {
+      newProducts = [
+        { id: 143, name: "Women's Dress 1", price: 49.99, image: '/images/product_image_3.svg' },
+        { id: 23, name: "Women's Dress 2", price: 59.99, image: '/images/product_image_3.svg' },
+        { id: 1343, name: "Women's Shirt 1", price: 29.99, image: '/images/product_image_3.svg' },
+        { id: 144, name: "Women's Shirt 2", price: 3.99, image: '/images/product_image_3.svg' },
+        { id: 14344, name: "Women's Shirt 2", price: 349.99, image: '/images/product_image_3.svg' },
+        { id: 1444, name: "Women's Shirt 2", price: 394.99, image: '/images/product_image_3.svg' },
+        { id: 1544, name: "Women's Shirt 2", price: 393.99, image: '/images/product_image_3.svg' },
+        { id: 1544, name: "Women's Shirt 2", price: 393.99, image: '/images/product_image_3.svg' },
+        { id: 1544, name: "Women's Shirt 2", price: 393.99, image: '/images/product_image_3.svg' },
+        { id: 1544, name: "Women's Shirt 2", price: 393.99, image: '/images/product_image_3.svg' },
+        { id: 1544, name: "Women's Shirt 2", price: 393.99, image: '/images/product_image_3.svg' },
+      ];
     } else {
+
     }
     setProducts(newProducts);
   }, [selectedCategory]);
@@ -65,7 +80,14 @@ function ProductListing({ selectedCategory }) {
       {/* Right side grid of products with margin */}
       <div className="w-4/5 p-4 mr-16">
         <div className="text-left text-4xl font-bold py-4 mb-8">
-          {selectedCategory === 'men' ? "Men's Clothing" : "Women's Clothing"}
+          {selectedCategory === 'men'
+            ? "Men's Clothing"
+            : selectedCategory === 'women'
+            ? "Women's Clothing"
+            : selectedCategory === 'new'
+            ? "New Products"
+            : "Other Categories"
+            }
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
           {products.map((product) => (
