@@ -1,7 +1,7 @@
 // IconComponents.js
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faHeart, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faHeart, faUser, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const ShoppingCartIcon = () => (
   <FontAwesomeIcon icon={faShoppingCart} />
@@ -14,5 +14,8 @@ const HeartIcon = () => (
 const UserIcon = () => (
   <FontAwesomeIcon icon={faUser} />
 );
+const SearchIcon = () => (
+  <FontAwesomeIcon icon={faSearch} />
+);
 
-export { ShoppingCartIcon, HeartIcon, UserIcon };
+export { ShoppingCartIcon, HeartIcon,SearchIcon, UserIcon };

@@ -1,9 +1,10 @@
+//components/Header.js
+
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
-import { ShoppingCartIcon, HeartIcon, UserIcon } from './IconComponents';
+import { ShoppingCartIcon, HeartIcon, UserIcon,SearchIcon } from './IconComponents';
 import MobileMenu from './MobileMenu';
-
 import 'tailwindcss/tailwind.css';
 
 function Header() {
@@ -20,9 +21,11 @@ function Header() {
     { text: 'Plus Size', href: '/plus_size' },
     { text: 'Brands', href: '/brands' },
   ];
+
   const closeMobileMenu = () => {
     setShowMobileMenu(false);
   };
+
   return (
     <header className="bg-gray-900 text-white">
       <div className="container mx-auto py-4 flex flex-col items-center">
@@ -32,11 +35,13 @@ function Header() {
         <nav className="flex items-center justify-center">
           <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 space-x-0 sm:space-x-4 items-center">
             <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 space-x-0 sm:space-x-14 items-center mx-16">
-            {navLinks.map((link) => (
-              <Link key={link.text} href={link.href}>
-                <div onClick={closeMobileMenu}>{link.text}</div>
-              </Link>
-            ))}
+              {navLinks.map((link) => (
+                <Link key={link.text} href={link.href}>
+                  <div onClick={closeMobileMenu}>
+                    {link.text}
+                  </div>
+                </Link>
+              ))}
             </div>
             <div className="relative text-gray-600">
               <input
@@ -50,13 +55,7 @@ function Header() {
                 className="absolute right-0 top-0 mt-3 mr-4 flex items-center"
               >
                 {/* Custom Search Icon */}
-                <Image
-                  src="/images/search-icon.png"
-                  alt="Search"
-                  width={24}
-                  height={24}
-                  className="w-6 h-6 ml-auto"
-                />
+                <SearchIcon className="w-6 h-6 ml-auto" />
               </button>
             </div>
             {/* Cart Button */}
@@ -66,7 +65,7 @@ function Header() {
               </div>
             </Link>
             {/* Login/Profile Button */}
-            <Link href="/profile">
+            <Link href="/registration">
               <div>
                 <UserIcon />
               </div>

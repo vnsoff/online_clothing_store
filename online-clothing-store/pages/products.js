@@ -1,34 +1,31 @@
 // pages/products.js
 
+import React from 'react';
 import Header from '../components/Header';
-import Product from '../components/ProductCard';
+import ProductListing from '../components/ProductListing';
+import CategorySelection from '../components/CategorySelection';
+import { useRouter } from 'next/router';
 
-// Sample product data (replace with actual data)
-const products = [
-  {
-    id: 1,
-    name: 'Product 1',
-    description: 'Description for Product 1',
-  },
-  {
-    id: 2,
-    name: 'Product 2',
-    description: 'Description for Product 2',
-  },
-  // Add more products as needed
-];
+function Products() {
+  const router = useRouter();
+  const handleCategorySelect = (selectedCategory) => {
+    if (selectedCategory === 'Brands') {
+      router.push('/brands');
+    } else {
+      router.push(`/products/${selectedCategory.toLowerCase()}`);
+    }
+  };
 
-function ProductsPage() {
   return (
     <div>
       <Header />
-      <div className="container mx-auto">
-        <h1 className="text-2xl font-bold my-4">Products</h1>
-        <Product products={products} />
-      </div>
+      <CategorySelection
+        categories={['Women', 'Men', 'Trends', 'New', 'Plus Size', 'Brands']}
+        onSelectCategory={handleCategorySelect}
+      />
+      <ProductListing />
     </div>
   );
 }
-console.log(products); // Add this line to check the contents of the 'products' array
 
-export default ProductsPage;
+export default Products;

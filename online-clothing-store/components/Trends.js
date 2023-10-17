@@ -1,10 +1,11 @@
-//components/Women.js
+//components/Trends.js
+
 import React, { useState } from 'react';
 import CategorySelection from '../components/CategorySelection';
 import ProductListing from '../components/ProductListing';
 
-function Women() {
-  const [selectedCategory, setSelectedCategory] = useState('Women');
+function Trends() {
+  const [selectedCategory, setSelectedCategory] = useState('Trends');
 
   return (
     <div>
@@ -14,4 +15,4 @@ function Women() {
   );
 }
 
-export default Women;
+export default Trends;
