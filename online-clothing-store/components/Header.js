@@ -65,7 +65,7 @@ function Header() {
               </div>
             </Link>
             {/* Login/Profile Button */}
-            <Link href="/profile">
+            <Link href="/registration">
               <div>
                 <UserIcon />
               </div>
