@@ -1,5 +1,4 @@
-// components/Register.js
-
+// components/RegistrationForm.js
 import React, { Component } from 'react';
 
 class RegistrationForm extends Component {
@@ -18,7 +17,6 @@ class RegistrationForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    // Send a POST request to the server with the form data
     fetch('/register.php', {
       method: 'POST',
       body: JSON.stringify(this.state),
@@ -35,27 +33,46 @@ class RegistrationForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Full Name"
-          onChange={this.handleChange}
-        />
-        <input
-          type="text"
-          name="login"
-          placeholder="Username"
-          onChange={this.handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          onChange={this.handleChange}
-        />
-        <button type="submit">Register</button>
-      </form>
+      <div className="max-w-md my-10 mx-auto">
+        <h1 className="text-2xl font-bold mb-4 text-center">Register</h1>
+        <form onSubmit={this.handleSubmit}>
+          <div className="mb-4 my-10">
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              className="w-full px-3 py-2 border rounded-md"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="mb-4">
+            <input
+              type="text"
+              name="login"
+              placeholder="Username"
+              className="w-full px-3 py-2 border rounded-md"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="mb-4">
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              className="w-full px-3 py-2 border rounded-md"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="text-center">
+            <button
+              type="submit"
+              className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md"
+            >
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
     );
   }
 }
