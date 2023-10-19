@@ -6,8 +6,11 @@ import ProductCard from '../components/ProductCard';
 
 function ProductListing({ selectedCategory }) {
   const [products, setProducts] = useState([]);
-
-  useEffect(() => {
+  
+  const onAddToCart = (product, quantity) => {
+    addToCart(product, quantity);
+  };
+    useEffect(() => {
     let newProducts;
 /*     const fetchProducts = async () => {
       try {
@@ -144,7 +147,7 @@ function ProductListing({ selectedCategory }) {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />
           ))}
         </div>
       </div>

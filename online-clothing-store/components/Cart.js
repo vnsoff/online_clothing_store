@@ -1,27 +1,33 @@
-// components/Cart.js
-
 import React, { useState, useEffect } from 'react';
 import CartSummary from '../components/CartSummary';
 import CartItem from '../components/CartItem';
 import CheckoutButton from '../components/CheckoutButton';
 
 function Cart() {
-  // Mock cart data
+  // Initialize cart with an empty array
   const [cartItems, setCartItems] = useState([]);
 
-  // Fetch the cart items from a server
-  useEffect(() => {
-    // Simulated fetch
-    // Example: fetch('/api/cart').then((response) => response.json())
-    // .then((data) => setCartItems(data));
+  // Function to add items to the cart
+  const addToCart = (product, quantity) => {
+    // Check if the product is already in the cart
+    const existingItem = cartItems.find((item) => item.id === product.id);
 
-    const exampleCartData = [
-      { id: 1, name: 'Product 1', price: 19.99, quantity: 2 },
-      { id: 2, name: 'Product 2', price: 29.99, quantity: 1 },
-    ];
+    if (existingItem) {
+      // If the item already exists, update the quantity
+      const updatedCart = cartItems.map((item) => {
+        if (item.id === product.id) {
+          return { ...item, quantity: item.quantity + quantity };
+        } else {
+          return item;
+        }
+      });
 
-    setCartItems(exampleCartData);
-  }, []);
+      setCartItems(updatedCart);
+    } else {
+      // If it's a new item, add it to the cart
+      setCartItems([...cartItems, { ...product, quantity }]);
+    }
+  };
 
   // Calculate the total price
   const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
