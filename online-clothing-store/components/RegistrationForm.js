@@ -17,9 +17,12 @@ class RegistrationForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    fetch('/register.php', {
+    fetch('/api/register', {
       method: 'POST',
       body: JSON.stringify(this.state),
+      headers: {
+        'Content-Type': 'application/json',
+      },
     })
       .then((response) => response.json())
       .then((data) => {
@@ -66,7 +69,7 @@ class RegistrationForm extends Component {
           <div className="text-center">
             <button
               type="submit"
-              className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md"
+              className="px-4 py-2 bg-blue-500 hover-bg-blue-600 text-white rounded-md"
             >
               Register
             </button>

@@ -19,6 +19,7 @@
     "axios": "^1.5.1",
     "feather-icons": "^4.29.1",
     "next": "latest",
+    "next-auth": "^4.24.3",
     "react": "latest",
     "react-dom": "latest",
     "react-query": "^3.39.3",
