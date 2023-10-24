@@ -5,8 +5,8 @@ class RegistrationForm extends Component {
   constructor() {
     super();
     this.state = {
-      name: '',
-      login: '',
+      username: '', // Changed 'name' to 'username'
+      email: '',    // Changed 'login' to 'email'
       password: '',
     };
   }
@@ -24,13 +24,21 @@ class RegistrationForm extends Component {
         'Content-Type': 'application/json',
       },
     })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
+      .then((response) => {
+        if (response.status === 201) {
           alert('Registration successful!');
         } else {
           alert('Registration failed. Please try again.');
         }
+        return response.json();
+      })
+      .then((data) => {
+        // You can further process the response data if needed.
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
       });
   };
 
@@ -42,7 +50,7 @@ class RegistrationForm extends Component {
           <div className="mb-4 my-10">
             <input
               type="text"
-              name="name"
+              name="username" // Changed 'name' to 'username'
               placeholder="Full Name"
               className="w-full px-3 py-2 border rounded-md"
               onChange={this.handleChange}
@@ -51,7 +59,7 @@ class RegistrationForm extends Component {
           <div className="mb-4">
             <input
               type="text"
-              name="login"
+              name="email" // Changed 'login' to 'email'
               placeholder="Username"
               className="w-full px-3 py-2 border rounded-md"
               onChange={this.handleChange}

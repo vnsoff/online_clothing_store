@@ -1,7 +1,6 @@
 //components/Header.js
 
 import Link from 'next/link';
-import Image from 'next/image';
 import React from 'react';
 import { ShoppingCartIcon, HeartIcon, UserIcon,SearchIcon } from './IconComponents';
 import MobileMenu from './MobileMenu';
@@ -21,7 +20,7 @@ function Header() {
     { text: 'Plus Size', href: '/plus_size' },
     { text: 'Brands', href: '/brands' },
   ];
-
+  
   const closeMobileMenu = () => {
     setShowMobileMenu(false);
   };

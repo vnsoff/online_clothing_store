@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import ProductListing from '../components/ProductListing';
 import CategorySelection from '../components/CategorySelection';
 import { useRouter } from 'next/router';
-import Footer from '@/components/Footer';
+import Footer from '../components/Footer';
 
 function Products() {
   const router = useRouter();

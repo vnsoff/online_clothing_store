@@ -1,5 +1,4 @@
 //components/ProductCard.js
-
 import React, { useState } from 'react';
 
 function ProductCard({ product, onAddToCart }) {
@@ -20,7 +19,7 @@ function ProductCard({ product, onAddToCart }) {
       <div className="p-4">
         <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
         <p className="text-gray-600">${product.price}</p>
-        <div className="flex justify-between items-center mt-4">
+        <div className="flex justify between items-center mt-4">
           <div className="relative">
             <input
               type="number"
@@ -30,11 +29,11 @@ function ProductCard({ product, onAddToCart }) {
             />
           </div>
           <button
-        onClick={handleAddToCart}
-        className="bg-blue-500 text-white px-4 py-2 mt-4 rounded-full"
-      >
-        Add to Cart
-      </button>
+            onClick={handleAddToCart}
+            className="bg-blue-500 text-white px-4 py-2 mt-4 rounded-full"
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
