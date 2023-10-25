@@ -1,35 +1,59 @@
-const express = require('express');
-const app = express();
+var express = require('express');
+var mysql = require('mysql');
+var cors = require('cors');
 
-// Define a simple in-memory product database. Replace this with your actual data source.
-const productsDatabase = {
-  Men: [
-    { id: 1, name: 'Men Product 1', price: 29.99 },
-    { id: 2, name: 'Men Product 2', price: 39.99 },
-    // Add more men's products as needed.
-  ],
-  Women: [
-    { id: 3, name: 'Women Product 1', price: 19.99 },
-    { id: 4, name: 'Women Product 2', price: 24.99 },
-    // Add more women's products as needed.
-  ],
-  // Define other categories and their products.
-};
+const app = express ();
 
-app.get('/api/products', (req, res) => {
-  const category = req.query.category;
+app.use(express.json());
+app.use(cors());
 
-  // Check if the category is valid and exists in the database.
-  if (productsDatabase[category]) {
-    // If the category exists, send the products for that category as the response.
-    res.json(productsDatabase[category]);
-  } else {
-    // If the category is not found, send an error response with a 404 status code.
-    res.status(404).json({ error: 'Category not found' });
+const con = mysql.createConnection(
+  {
+    user: "root",
+    host: "localhost",
+    password: "",
+    database: "tests",
   }
-});
+)
 
-const port = 3001;
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+app.post('/tests', (req,res) => {
+  const email = req.body.email
+  const username = req.body.username
+  const password = req.body.password
+
+  con.query("INSERT INTO users(email, username, password)VALUES(?,?,?)",[email,username, password],
+  (err,result) => {
+    if(result) {
+      res.send(result);
+    } else {
+      res.send({message: "Enter again."})
+    }
+  }
+  )
+
+})
+
+app.post('/tests', (req,res) => {
+  const email = req.body.email
+  const username = req.body.username
+  const password = req.body.password
+
+  con.query("SELECT * FROM users users WHERE username = ? AND password = ?",[username, password],
+  (err,result) => {
+    if(err) {
+      res.setDefaultEncoding({err: err});
+    } else {
+      if (result.lenght > 0) {
+        res.send(result);
+      } else {
+        res.send({message: "Wrong password or username."});
+      }
+    }
+  }
+  )
+
+})
+
+app.listen(3001, () => {
+  console.log('running backend');
+})

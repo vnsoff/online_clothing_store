@@ -1,6 +1,6 @@
 // utils/dbConnect.js
 
-import { Sequelize } from 'sequelize';
+/* import { Sequelize } from 'sequelize';
 
 let sequelize;
 
@@ -17,3 +17,4 @@ if (process.env.DB_PASS) {
 }
 
 export default sequelize;
+ */

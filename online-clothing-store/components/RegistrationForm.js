@@ -1,8 +1,11 @@
 // components/RegistrationForm.js
 import React, { Component } from 'react';
+import { useState } from 'react';
+import Axios from 'axios';
 
+//function App () {}
 class RegistrationForm extends Component {
-  constructor() {
+/*   constructor() {
     super();
     this.state = {
       username: '', // Changed 'name' to 'username'
@@ -41,6 +44,13 @@ class RegistrationForm extends Component {
         alert('An error occurred. Please try again.');
       });
   };
+ */
+
+  const[email,setEmail] = useState("");
+  const[username,setUsername]  = useState("");
+  const[password,setPassword] = useState("");
+  const[loginStatus,setLoginStatus] = useState("");
+  const[registerStatus,setRegisterStatus] = useState("");
 
   render() {
     return (

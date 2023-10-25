@@ -1,5 +1,5 @@
 // models/User.js
-import { DataTypes } from 'sequelize';
+/* import { DataTypes } from 'sequelize';
 import db from '../utils/dbConnect';
 
 const User = db.define('User', {
@@ -18,4 +18,4 @@ const User = db.define('User', {
   },
 });
 
-export default User;
+export default User; */
