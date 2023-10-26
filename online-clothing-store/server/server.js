@@ -16,7 +16,7 @@ const con = mysql.createConnection(
   }
 )
 
-app.post('/tests', (req,res) => {
+app.post('/registration', (req,res) => {
   const email = req.body.email
   const username = req.body.username
   const password = req.body.password
@@ -33,7 +33,7 @@ app.post('/tests', (req,res) => {
 
 })
 
-app.post('/tests', (req,res) => {
+app.post('/registration', (req,res) => {
   const email = req.body.email
   const username = req.body.username
   const password = req.body.password

@@ -1,10 +1,10 @@
 // components/RegistrationForm.js
-import React, { Component } from 'react';
+import React from 'react';
 import { useState } from 'react';
 import Axios from 'axios';
 
-//function App () {}
-class RegistrationForm extends Component {
+function RegistrationForm () {
+/* class RegistrationForm extends Component { */
 /*   constructor() {
     super();
     this.state = {
@@ -52,50 +52,32 @@ class RegistrationForm extends Component {
   const[loginStatus,setLoginStatus] = useState("");
   const[registerStatus,setRegisterStatus] = useState("");
 
-  render() {
     return (
-      <div className="max-w-md my-10 mx-auto">
-        <h1 className="text-2xl font-bold mb-4 text-center">Register</h1>
-        <form onSubmit={this.handleSubmit}>
-          <div className="mb-4 my-10">
-            <input
-              type="text"
-              name="username" // Changed 'name' to 'username'
-              placeholder="Full Name"
-              className="w-full px-3 py-2 border rounded-md"
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="mb-4">
-            <input
-              type="text"
-              name="email" // Changed 'login' to 'email'
-              placeholder="Username"
-              className="w-full px-3 py-2 border rounded-md"
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="mb-4">
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              className="w-full px-3 py-2 border rounded-md"
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="text-center">
-            <button
-              type="submit"
-              className="px-4 py-2 bg-blue-500 hover-bg-blue-600 text-white rounded-md"
-            >
-              Register
-            </button>
-          </div>
-        </form>
-      </div>
+      <div className='container'>
+        <div className='loginForm'>
+          <form>
+            <h4>Login</h4>
+            <label htmlFor="username">Username</label>
+            <input className="textInput" type="text" name="username" onChange={(e)=>{setUsername(e.target.value)}} placeholder="Enter your username" required/>
+            <label htmlFor="password">Password</label>
+            <input className="textInput" type="text" onChange={(e)=>{setPassword(e.target.value)}} name="password"placeholder="Enter your password" required/>
+            <input className='button' type='submit' onClick={login} value="Login"/>
+          </form>
+        </div>
+        <div className='registrationForm'>
+          <form>
+          <h4>Register</h4>
+          <label htmlFor="email">Email Adress</label>
+          <input className="textInput" type="text" name="email"placeholder="Enter your Email Adress" required/>
+          <label htmlFor="username">Username</label>
+          <input className="textInput" type="text" name="username"placeholder="Enter your username" required/>
+          <label htmlFor="password">Password</label>
+          <input className="textInput" type="text" name="password"placeholder="Enter your password" required/>
+          <input className='button' type='submit' onClick={register} value="Login"/>
+          </form>
+        </div>
+      </div>      
     );
-  }
 }
 
 export default RegistrationForm;
